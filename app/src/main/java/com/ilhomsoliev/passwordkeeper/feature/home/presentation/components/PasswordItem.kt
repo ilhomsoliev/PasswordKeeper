@@ -20,7 +20,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.ilhomsoliev.passwordkeeper.R
 import com.ilhomsoliev.passwordkeeper.feature.shared.SCachedImage
 
 @Composable
@@ -54,7 +56,7 @@ fun PasswordItem(
             Column(modifier = Modifier) {
                 Text(text = title, style = MaterialTheme.typography.titleMedium)
                 Text(
-                    text = if (isShown) password else "•••••••••••",
+                    text = if (isShown) password else stringResource(R.string.password_dots),
                     style = MaterialTheme.typography.bodyLarge
                 )
 

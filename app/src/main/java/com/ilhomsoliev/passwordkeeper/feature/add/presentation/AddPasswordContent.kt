@@ -18,7 +18,9 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.ilhomsoliev.passwordkeeper.R
 import com.ilhomsoliev.passwordkeeper.feature.shared.textfield.PasswordTextField
 
 data class AddPasswordState(
@@ -53,7 +55,10 @@ fun AddPasswordContent(
                     Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null)
                 }
             }, title = {
-                Text(text = if (state.isEditing) "Edit Password" else "Add Password")
+                Text(text = if (state.isEditing) stringResource(R.string.edit_password) else stringResource(
+                    R.string.add_password
+                )
+                )
             }, actions = {
                 if (state.isEditing)
                     IconButton(onClick = {
@@ -82,7 +87,7 @@ fun AddPasswordContent(
                     value = state.website,
                     onValueChange = { callback.onWebsiteChange(it) },
                     placeholder = {
-                        Text(text = "Website")
+                        Text(text = stringResource(R.string.website))
                     }, singleLine = true
                 )
 

@@ -7,7 +7,8 @@ data class WebsitePasswordUiModel(
     val website: String,
     var password: String,
 ) {
-    val websiteIconUrl: String = "https://www.google.com/s2/favicons?domain=$website"
+    val websiteIconUrl: String = "https://www.google.com/s2/favicons?domain=$website&sz=128"
+
     fun isShown() = password.isNotEmpty()
 }
 

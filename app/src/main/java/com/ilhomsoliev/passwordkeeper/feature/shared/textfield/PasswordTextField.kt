@@ -14,15 +14,17 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import com.ilhomsoliev.passwordkeeper.R
 
 @Composable
 fun PasswordTextField(
     modifier: Modifier = Modifier,
-    hint: String = "Password",
+    hint: String = stringResource(R.string.password),
     value: String,
     onValueChange: (String) -> Unit
 ) {

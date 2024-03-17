@@ -21,7 +21,10 @@ class MainActivity : FragmentActivity() {
                 snackbarHostState = snackbarHostState,
                 coroutineScope = coroutineScope
             ) {
-                Navigation()
+                Navigation(
+                    snackbarHostState = snackbarHostState,
+
+                )
             }
         }
     }

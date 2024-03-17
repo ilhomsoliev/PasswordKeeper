@@ -14,7 +14,6 @@ class InsertWebsitePasswordUseCase(
     suspend operator fun invoke(websitePassword: WebsitePassword): ResponseUseCase<Unit> {
         val website = websitePassword.website
         val password = websitePassword.password
-
         if (!isValidWebsite(website) || !isValidPassword(password)) {
             return ResponseUseCase.Error(ErrorUseCase.OtherError("Invalid password or website"))
         }
